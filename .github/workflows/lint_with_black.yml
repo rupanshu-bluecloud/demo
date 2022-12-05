@@ -1,0 +1,14 @@
+name: Black check
+on: [push]
+jobs:
+  BlackCheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install Black
+        run: |
+          pip install black
+      - name: Run Black
+        run: |
+          black model.py
